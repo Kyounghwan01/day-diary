@@ -1,3 +1,49 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "rules": {
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/jsx-filename-extension": ["warn",{"extensions":[".tsx"]}],
+    "import/extensions":[ "error", "ignorePackages", { "ts":"never", "tsx":"never" }],
+    "react/jsx-props-no-spreading": 0,
+    "@typescript-eslint/no-unused-vars": 2,
+    "no-empty-pattern": 2,
+    "no-case-declarations": 2,
+    "no-use-before-define": 0,
+    "no-plusplus": 0,
+    "react/function-component-definition": 0
+  },
+  "settings":{
+    "import/resolver":{
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "@types"]
+      },
+      "typescript":{
+        "project": "tsconfig.json"
+      }
+    }
+  }
 }
