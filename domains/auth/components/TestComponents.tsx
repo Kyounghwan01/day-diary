@@ -8,6 +8,7 @@ const TestComponents = () => {
   return (
     <div>
       TestComponents{' '}
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <button type="button" onClick={() => testStore.setCount(12)}>
         setsts
       </button>
